@@ -1,8 +1,14 @@
-import { ADD_CANDIDATE, FILTER_BY_LOCATION } from "../constants/action-types";
+import { ADD_CANDIDATE, FILTER } from "../constants/action-types";
 
 const initialState = {
     candidates: [],
-    filteredCandidates: []
+    filters: {
+        position:"",
+        experience:"",
+        availibility:"",
+        location:""
+    },
+    filteredCandidates:[]
 };
 
 function rootReducer(state = initialState, action ){
@@ -11,15 +17,12 @@ function rootReducer(state = initialState, action ){
             candidates: state.candidates.concat(action.details)
           });
       }
-    if (action.type === FILTER_BY_LOCATION) {
-        if (action.location === "All"){
-            return Object.assign({}, state, {
-                filteredCandidates: state.candidates
-              });
-        }
+    if (action.type === FILTER) {
+
         return Object.assign({}, state, {            
             filteredCandidates: state.candidates.filter((candidate) => {
-                return candidate.location === action.location
+                return (candidate.location).includes(action.filters.location) && (candidate.experience).includes(action.filters.experience) && (candidate.position).includes(action.filters.position) && (candidate.availibility).includes(action.filters.availibility)
+                // candidate.experience === action.filters.experience && candidate.availibility === action.filters.availibility && candidate.position === action.filters.position
             })
           });
       }

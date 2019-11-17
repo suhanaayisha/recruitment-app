@@ -19,10 +19,10 @@ class ConnectedForm extends Component{
             image: "",
             firstname: "",
             lastname: "",
-            position:"",
-            experience:"",
-            availibility:"",
-            location:"",
+            position:[],
+            experience:[],
+            availibility:[],
+            location:[],
             set:false,
             positionSet:false
         };
@@ -44,10 +44,10 @@ class ConnectedForm extends Component{
             image:target.image.value, 
             firstname: target.firstname.value,
             lastname: target.lastname.value,
-            position: target.position.value,
-            experience: target.experience.value,
-            availibility: target.availibility.value,
-            location: target.location.value,
+            position: ["",target.position.value],
+            experience: ["",target.experience.value],
+            availibility: ["",target.availibility.value],
+            location: ["",target.location.value],
             set: true
         },() => {
             const { id,image,firstname,lastname,position,experience,availibility,location} = this.state;
@@ -128,7 +128,7 @@ class ConnectedForm extends Component{
                         
                         <div className="radio">
                             <label>
-                                <input type="radio" name="availibility" value="1 weeks"  />
+                                <input type="radio" name="availibility" value="1 week"  />
                                 1 week
                             </label>
                         
