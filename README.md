@@ -1,7 +1,10 @@
+A simple recruiter app where you can add details about different candidates, and filter them accroding to various categories.
 
 ## Available Scripts
 
 In the project directory, you can run:
+### ` yarn install`
+Installs the packages needed to run the app in development mode
 
 ### `yarn start`
 
