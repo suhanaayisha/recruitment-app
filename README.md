@@ -17,3 +17,5 @@ You will also see any lint errors in the console.
 ### `yarn build`
 
 Builds the app for production to the `build` folder.<br />
+
+The app is deployed on https://recruiter-app-appsintegra.herokuapp.com/
